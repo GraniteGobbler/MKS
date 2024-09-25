@@ -92,25 +92,40 @@ int main(void)
 
 
   /* USER CODE BEGIN 2 */
-  uint8_t array[32] = {1,0,1,0,1,0,0,1,1,1,0,1,1,1,0,1,1,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0};
+//  uint8_t array[32] = {1,0,1,0,1,0,0,1,1,1,0,1,1,1,0,1,1,1,0,0,1,0,1,0,1,0,0,0,0,0,0,0};
+  uint32_t bitarray = 0b10101001110111011100101010000000;
+
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  for(uint8_t i = 0; i < sizeof(array); i++){
-		  if (array[i] == 1){
+//	  for(uint8_t i = 0; i < sizeof(array); i++){
+//		  if (array[i] == 1){
+//			  LL_GPIO_SetOutputPin(LD2_GPIO_Port, LD2_Pin);
+//		  }
+//		  else{
+//			  LL_GPIO_ResetOutputPin(LD2_GPIO_Port, LD2_Pin);
+//		  }
+//
+//		  LL_mDelay(200);
+//	  };
+	  uint32_t sel = 0x80000000;
+	  for(uint8_t i = 0; i < sizeof(bitarray)*8; i++){
+		  if (bitarray & sel){
 			  LL_GPIO_SetOutputPin(LD2_GPIO_Port, LD2_Pin);
 		  }
 		  else{
 			  LL_GPIO_ResetOutputPin(LD2_GPIO_Port, LD2_Pin);
 		  }
 
+		  sel>>=1;
+
 		  LL_mDelay(200);
-	  };
-
-
+	  }
 
 
     /* USER CODE END WHILE */
