@@ -73,7 +73,6 @@ void blink(void){
 void button(void){
 
 	static uint32_t delay;
-	static uint32_t delay_5ms;
 	static uint32_t old_s1;
 //	static uint32_t old_s2;
 	static uint32_t off_time;
@@ -91,7 +90,7 @@ void button(void){
 //		old_s2 = new_s2;
 //	}
 
-	if (Tick > delay + BTT_TIME_ON){
+	if(Tick > delay + BTT_TIME_ON){
 		uint32_t new_s1 = LL_GPIO_IsInputPinSet(S1_GPIO_Port, S1_Pin);
 
 		if (old_s1 && !new_s1) { // falling edge
@@ -102,21 +101,22 @@ void button(void){
 		old_s1 = new_s1;
 	}
 
-	if (Tick > delay_5ms + SHIFT_DELAY){
+
+	if(Tick > delay + SHIFT_DELAY){
 		uint32_t s2 = LL_GPIO_IsInputPinSet(S2_GPIO_Port, S2_Pin);
 
-		debounce <<= 1;
 		if (s2) {
-			debounce |= 0x0001;
+			debounce <<= 1;
+			debounce ||= 0xFFF1;
 		}
 
-		if (debounce == 0x7FFF){
+		if(debounce && 0x7FFF){
 			LL_GPIO_SetOutputPin(LED2_GPIO_Port, LED2_Pin);
-			off_time = Tick + LED_TIME_SHORT;
 		}
 
-		delay_5ms = Tick;
+		delay = Tick;
 	}
+
 
 	if (Tick > off_time) {
 		LL_GPIO_ResetOutputPin(LED2_GPIO_Port, LED2_Pin);
