@@ -1,9 +1,5 @@
-../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_exti.h:890:26:LL_EXTI_IsActiveFlag_0_31	1
-../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_exti.h:970:22:LL_EXTI_ClearFlag_0_31	1
-../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h:896:22:LL_GPIO_TogglePin	1
 ../Core/Src/stm32f0xx_it.c:69:6:NMI_Handler	1
 ../Core/Src/stm32f0xx_it.c:84:6:HardFault_Handler	1
 ../Core/Src/stm32f0xx_it.c:99:6:SVC_Handler	1
 ../Core/Src/stm32f0xx_it.c:112:6:PendSV_Handler	1
 ../Core/Src/stm32f0xx_it.c:125:6:SysTick_Handler	1
-../Core/Src/stm32f0xx_it.c:146:6:EXTI0_1_IRQHandler	3
