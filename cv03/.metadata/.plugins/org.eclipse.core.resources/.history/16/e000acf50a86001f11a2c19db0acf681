@@ -1,0 +1,33 @@
+/*
+ * sct.c
+ *
+ *  Created on: Oct 9, 2024
+ *      Author: 240635
+ */
+#include "main.h"
+
+void sct_init(void){
+
+  sct_led(0);
+
+}
+
+void sct_led(uint32_t value){
+
+	//	uint8_t bit_out = 0;
+	//	uint32_t LSB_mask = 0x01;
+
+	for(uint8_t i = 0; i < sizeof(value) * 8; i++){
+
+		//		bit_out = value && LSB_mask;
+
+		HAL_GPIO_WritePin(SCT_SDI_GPIO_Port, SCT_SDI_Pin, value && 1); // Write LSB of value to SDI
+
+		value >>= 1;
+
+	}
+
+	HAL_GPIO_WritePin(SCT_CLK_GPIO_Port, SCT_CLK_Pin, 1);
+	HAL_GPIO_WritePin(SCT_CLK_GPIO_Port, SCT_CLK_Pin, 0);
+
+}

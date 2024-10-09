@@ -1,0 +1,14 @@
+/*
+ * sct.h
+ *
+ *  Created on: Oct 9, 2024
+ *      Author: 240635
+ */
+
+#ifndef SCT_H_
+#define SCT_H_
+
+#include "main.h"
+
+
+#endif /* SCT_H_ */
