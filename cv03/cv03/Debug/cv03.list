@@ -882,7 +882,7 @@ void sct_led(uint32_t value){
  8000592:	701a      	strb	r2, [r3, #0]
  8000594:	e01e      	b.n	80005d4 <sct_led+0x50>
 
-		//		bit_out = value && LSB_mask;
+		//		bit_out = value & LSB_mask;
 
 		HAL_GPIO_WritePin(SCT_SDI_GPIO_Port, SCT_SDI_Pin, value & 1); // Write LSB of value to SDI
  8000596:	687b      	ldr	r3, [r7, #4]
@@ -1022,10 +1022,6 @@ void sct_value(uint16_t value){
  8000684:	68fa      	ldr	r2, [r7, #12]
  8000686:	4313      	orrs	r3, r2
  8000688:	60fb      	str	r3, [r7, #12]
-
-
-
-
 
 	sct_led(reg);
  800068a:	68fb      	ldr	r3, [r7, #12]
