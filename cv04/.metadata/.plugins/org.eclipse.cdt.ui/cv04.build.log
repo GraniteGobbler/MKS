@@ -1,0 +1,10 @@
+10:49:42 **** Incremental Build of configuration Debug for project cv04 ****
+make -j4 all 
+arm-none-eabi-size  cv04.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11700	     12	   1796	  13508	   34c4	cv04.elf
+Finished building: default.size.stdout
+ 
+
+10:49:43 Build Finished. 0 errors, 0 warnings. (took 467ms)
+
