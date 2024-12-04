@@ -1,0 +1,9 @@
+../Core/Src/main.c:65:6:step	1
+../Core/Src/main.c:79:6:circle	2
+../Core/Src/main.c:111:6:move	1
+../Core/Src/main.c:117:6:smile	2
+../Core/Src/main.c:155:5:main	2
+../Core/Src/main.c:223:6:SystemClock_Config	3
+../Core/Src/main.c:269:13:MX_USART3_UART_Init	2
+../Core/Src/main.c:302:13:MX_GPIO_Init	1
+../Core/Src/main.c:392:6:Error_Handler	1
