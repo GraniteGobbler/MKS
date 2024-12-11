@@ -1,0 +1,10 @@
+10:24:06 **** Incremental Build of configuration Debug for project cv11 ****
+make -j4 all 
+arm-none-eabi-size  cv11.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 164908	    144	  71368	 236420	  39b84	cv11.elf
+Finished building: default.size.stdout
+ 
+
+10:24:08 Build Finished. 0 errors, 0 warnings. (took 1s.387ms)
+
