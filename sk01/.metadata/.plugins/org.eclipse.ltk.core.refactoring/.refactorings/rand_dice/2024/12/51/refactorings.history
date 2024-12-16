@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;rand_dice/led_sweep.ioc&apos; to &apos;rand_dice.ioc&apos;" description="Rename resource &apos;led_sweep.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="led_sweep.ioc" name="rand_dice.ioc" stamp="1734355185217" updateReferences="true"/>
+</session>
